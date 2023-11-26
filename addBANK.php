@@ -41,10 +41,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Add Bank</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Central banking</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="bank.php"><i data-feather="corner-down-left"></i> Back to Banks</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 <div class="container mt-5">
 <div class="d-flex p-5 justify-content-between">
    <h1>banks list</h1>
-  <a href="bank.php"><i data-feather="corner-down-left"></i></a>
 </div>
 <h2>Add Bank</h2>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">

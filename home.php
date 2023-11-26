@@ -37,7 +37,7 @@
 
 			<div class="footer-left">
 
-				<h3>Company<span>logo</span></h3>
+				<h3>banque<span> centrale</span></h3>
 
 				<p class="footer-links">
 					<a href="#" class="link-1">Home</a>
@@ -52,7 +52,7 @@
 					
 					<a href="#">Contact</a>
 				</p>
-        <span> ©CopyRight2023</span>
+       
 			</div>
 
 			<div class="footer-center">

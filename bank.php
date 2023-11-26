@@ -7,17 +7,45 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Document</title>
+    <Style>
+        body{
+            width: 100vw;
+        }
+        .table {
+            width: 80%;
+            margin: auto;
+        }
+        
+    </Style>
 </head>
 <body>
   
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand p-2" href="#">central banking</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+    <ul class="navbar-nav d-flex justify-content-between ml-3">
+      <li class="nav-item active">
+        <a class="nav-link custom-link"class="navbar-brand" href="#">Dashboard</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link custom-link" href="#">Clients</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-link" href="#">Addresses</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
 <div class="d-flex p-5 justify-content-between">
    <h1>banks list</h1>
   <a href="addBANK.php"> <i data-feather="plus-circle"></i></a>
 </div>
 </div>
-
-<h2>List of Banks</h2>
     <table class="table">
         <thead>
         <tr>
