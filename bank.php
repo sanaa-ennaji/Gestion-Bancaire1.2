@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +28,6 @@
         </thead>
         <tbody>
         <?php
-
 $host = 'localhost';
 $username = 'root';
 $password = 'new_password';
@@ -39,9 +36,6 @@ $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {  
      die("Connection failed: " . $conn->connect_error);
 }
-
-
-        // Assuming you have a database connection established
         $result = mysqli_query($conn, "SELECT * FROM banks");
 
         while ($row = mysqli_fetch_assoc($result)) {
@@ -51,15 +45,11 @@ if ($conn->connect_error) {
                     <td><img src='data:image/jpeg;base64," . base64_encode($row['logo']) . "' alt='Bank Logo' style='max-width: 100px;'></td>
                   </tr>";
         }
-
-        // Close the database connection
         mysqli_close($conn);
         ?>
         </tbody>
     </table>
 </div>
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script>
       feather.replace();
