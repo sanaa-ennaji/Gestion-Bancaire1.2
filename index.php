@@ -11,7 +11,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
     
-    // Create database
+    //  database
     $sql = "CREATE DATABASE IF NOT EXISTS bank";
 
     if ($conn->query($sql) === TRUE) {
@@ -37,6 +37,16 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error creating clients table: " . $conn->error;
 }
+//  agences bank 
+
+
+
+
+
+
+
+
+
 
     $conn->close();
     ?>

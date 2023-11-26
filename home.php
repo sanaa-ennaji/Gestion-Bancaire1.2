@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>bank </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
   <body>
@@ -52,15 +52,14 @@
 					
 					<a href="#">Contact</a>
 				</p>
-
-				<p class="footer-company-name">banque centrale ©2023</p>
+        <span> ©CopyRight2023</span>
 			</div>
 
 			<div class="footer-center">
 
 				<div>
 					<i class="fa fa-map-marker"></i>
-					<p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+					<p><span>YouCode.safi</span> bank maghreb</p>
 				</div>
 
 				<div>
@@ -70,7 +69,7 @@
 
 				<div>
 					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">support@bank center.com</a></p>
+					<p>bankCenter@gmail.com</p>
 				</div>
 
 			</div>
@@ -78,21 +77,15 @@
 			<div class="footer-right">
 
 				<p class="footer-company-about">
-					<span>About the company</span>
+					<span>About the Central banking</span>
 					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
 				</p>
-
 				<div class="footer-icons">
-
 					<a href="#"><i class="fa fa-facebook"></i></a>
 					<a href="#"><i class="fa fa-twitter"></i></a>
 					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-github"></i></a>
-
 				</div>
-
 			</div>
-
 		</footer>
     <script src="https://kit.fontawesome.com/84554583df.js" crossorigin="anonymous"></script>
   </body>
