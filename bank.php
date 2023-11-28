@@ -8,16 +8,15 @@ $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+// delete
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_bank"])) {
     $bank_id = $_POST["bank_id"];
 
-    // Perform the delete operation
     $sql = "DELETE FROM banks WHERE id = $bank_id";
 
     if (mysqli_query($conn, $sql)) {
         echo "Bank deleted successfully";
 
-        // Redirect to refresh the page
         header("Location: {$_SERVER['PHP_SELF']}");
         exit();
     } else {
@@ -25,28 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_bank"])) {
     }
 }
 
-ob_end_flush(); // Flush the output buffer
+ob_end_flush(); 
 
 
 
-
-
-
-// Handling update bank logic
-// if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_bank"])) {
-//     $bank_id = $_POST["bank_id"];
-//     $updated_name = $_POST["updated_name"];
-//     // You can add more fields for updating, e.g., logo
-
-//     // Perform the update operation
-//     $sql = "UPDATE banks SET name = '$updated_name' WHERE id = $bank_id";
-
-//     if (mysqli_query($conn, $sql)) {
-//         echo "Bank updated successfully";
-//     } else {
-//         echo "Error updating bank: " . mysqli_error($conn);
-//     }
-// }
 
 mysqli_close($conn);
 ?>
@@ -69,10 +50,6 @@ mysqli_close($conn);
             margin: auto;
         }
 
-        
-        .update-form {
-            display: none;
-        }
     </style>
    
 </head>
@@ -131,7 +108,7 @@ if ($conn->connect_error) {
                     <input type='hidden' name='bank_id' value='{$row['id']}'>
                     <button type='submit' class='btn btn-danger' name='delete_bank'>Delete</button>
                 </form></td>
-                <td><button type='submit' class='btn btn-primary' name='update_bank'>Update</button></td>
+               
                   </tr>";
         }
         mysqli_close($conn);

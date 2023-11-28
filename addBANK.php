@@ -8,7 +8,6 @@ if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     $name = $_POST["name"];
     $logoTmpName = $_FILES["logo"]["tmp_name"];
     $logoType = $_FILES["logo"]["type"];
@@ -31,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($conn);
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,7 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <button type="submit" class="btn btn-primary">Add Bank</button>
     </form>
 </div>
-
 <script>
       feather.replace();
     </script>

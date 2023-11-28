@@ -32,7 +32,6 @@
 </div>
 <img src="img/banking-illustration.png" alt="bank">
     </section>
-
 <footer class="footer-distributed">
 
 			<div class="footer-left">
