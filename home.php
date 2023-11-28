@@ -26,8 +26,8 @@
 <div class="content">
 <h1>bienvenue! dans notre<br> système bancaire central</h1>
 <div class="btn">
- <a href="adminlogin.php"><button>admin login</button></a>
-<button>client login</button>
+ <a href="adminlogin.php"><button>login</button></a>
+
 </div>
 </div>
 <img src="img/banking-illustration.png" alt="bank">

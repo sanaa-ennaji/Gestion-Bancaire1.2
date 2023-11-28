@@ -5,11 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="dashboard/style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <!-- =============== side bar ================ -->
     <div class="container">
         <div class="navigation">
             <ul>
@@ -94,7 +92,7 @@
                 </nav>
             </div>
   
-    <script src="dashboard/main.js"></script>
+    <script src="main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

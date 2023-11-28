@@ -15,11 +15,15 @@
             width: 80%;
             margin: auto;
         }
+
         
-    </Style>
+        .update-form {
+            display: none;
+        }
+    </style>
+   
 </head>
 <body>
-  
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand p-2" href="#">central banking</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +43,6 @@
     </ul>
   </div>
 </nav>
-
 <div class="container">
 <div class="d-flex p-5 justify-content-between">
    <h1>banks list</h1>
@@ -56,9 +59,9 @@
         </thead>
         <tbody>
         <?php
-$host = 'localhost';
-$username = 'root';
-$password = 'new_password';
+ $host = 'localhost';
+  $username = 'root';
+ $password = 'new_password';
 $dbname = 'bank';
 $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {  
@@ -71,6 +74,11 @@ if ($conn->connect_error) {
                     <td>{$row['id']}</td>
                     <td>{$row['name']}</td>
                     <td><img src='data:image/jpeg;base64," . base64_encode($row['logo']) . "' alt='Bank Logo' style='max-width: 100px;'></td>
+                    <td> <form action='{$_SERVER['PHP_SELF']}' method='post'>
+                    <input type='hidden' name='bank_id' value='{$row['id']}'>
+                    <button type='submit' class='btn btn-danger' name='delete_bank'>Delete</button>
+                </form></td>
+                <button type='submit' class='btn btn-primary' name='update_bank'>Update</button>
                   </tr>";
         }
         mysqli_close($conn);
@@ -84,5 +92,48 @@ if ($conn->connect_error) {
     </script>
 </body>
 </html>
+<?php
+$host = 'localhost';
+$username = 'root';
+$password = 'new_password';
+$dbname = 'bank';
+$conn = new mysqli($host, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_bank"])) {
+    $bank_id = $_POST["bank_id"];
+
+    // Perform the delete operation
+    $sql = "DELETE FROM banks WHERE id = $bank_id";
+
+    // if (mysqli_query($conn, $sql)) {
+    //     echo "Bank deleted successfully";
+    // } else {
+    //     echo "Error deleting bank: " . mysqli_error($conn);
+    // }
+}
+
+
+
+// Handling update bank logic
+// if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_bank"])) {
+//     $bank_id = $_POST["bank_id"];
+//     $updated_name = $_POST["updated_name"];
+//     // You can add more fields for updating, e.g., logo
+
+//     // Perform the update operation
+//     $sql = "UPDATE banks SET name = '$updated_name' WHERE id = $bank_id";
+
+//     if (mysqli_query($conn, $sql)) {
+//         echo "Bank updated successfully";
+//     } else {
+//         echo "Error updating bank: " . mysqli_error($conn);
+//     }
+// }
+
+mysqli_close($conn);
+?>
 
 

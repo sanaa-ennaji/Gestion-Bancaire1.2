@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO banks (name, logo) VALUES ('$name', '$logo')";
 
         if (mysqli_query($conn, $sql)) {
-            echo "Bank added successfully";
+            echo "";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($conn);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,8 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" class="form-control" name="name" required>
         </div>
         <div class="form-group">
-            <label for="logo">Logo:</label>
-            <input type="file" class="form-control-file" name="logo" accept="image/*" required>
+          <label for="logo">Logo:</label>
+           <input type="file" class="form-control-file" name="logo" accept="image/*" required>
         </div>
         <button type="submit" class="btn btn-primary">Add Bank</button>
     </form>
