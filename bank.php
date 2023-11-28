@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_bank"])) {
 
     if (mysqli_query($conn, $sql)) {
         echo "Bank deleted successfully";
-
         header("Location: {$_SERVER['PHP_SELF']}");
         exit();
     } else {
@@ -25,8 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_bank"])) {
 }
 
 ob_end_flush(); 
-
-
 
 
 mysqli_close($conn);
@@ -62,11 +59,11 @@ mysqli_close($conn);
   <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
     <ul class="navbar-nav d-flex justify-content-between ml-3">
       <li class="nav-item active">
-        <a class="nav-link custom-link"class="navbar-brand" href="#">Dashboard</a>
+        <a class="nav-link custom-link"class="navbar-brand" href="dashboard.php">Dashboard</a>
       </li>
       <li class="nav-item" >
         <a class="nav-link custom-link" href="#">Clients</a>
-      </li>
+      </li>      
       <li class="nav-item">
         <a class="nav-link custom-link" href="#">Addresses</a>
       </li>
@@ -85,6 +82,7 @@ mysqli_close($conn);
             <th>ID</th>
             <th>Name</th>
             <th>Logo</th>
+            <th>action</th>
         </tr>
         </thead>
         <tbody>

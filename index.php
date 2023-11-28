@@ -1,4 +1,3 @@
- <!-- config + connection + TAPLES -->
 <?php
     $host = 'localhost';
     $username = 'root';
@@ -10,8 +9,9 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    //  database
-    $sql = "CREATE DATABASE IF NOT EXISTS bank";
+
+    // Create the database
+    $sql = "CREATE DATABASE IF NOT EXISTS $databaseName CHARACTER SET utf8 COLLATE utf8_general_ci";
 
     if ($conn->query($sql) === TRUE) {
         echo "Database '$databaseName' created successfully.\n";
@@ -19,75 +19,39 @@
         echo "Error creating database: " . $conn->error;
     }
 
-    $conn = mysqli_connect($host, $username, $password, $databaseName);
+    // Select the database
+    mysqli_select_db($conn, $databaseName);
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    //taple of banks 
+    // Create the banks table
     $sql = "CREATE TABLE IF NOT EXISTS banks (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         logo LONGBLOB
     )";
-    
-if ($conn->query($sql) === TRUE) {
-    echo "Clients table created successfully";
-} else {
-    echo "Error creating clients table: " . $conn->error;
-}
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Banks table created successfully\n";
+    } else {
+        echo "Error creating banks table: " . $conn->error;
+    }
+
+    $sql = "CREATE TABLE IF NOT EXISTS agencies (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        longitude DECIMAL(10, 6) NOT NULL,
+        latitude DECIMAL(10, 6) NOT NULL,
+        adresse VARCHAR(255) NOT NULL,
+        bank_id INT,
+        FOREIGN KEY (bank_id) REFERENCES banks(id) ON UPDATE CASCADE ON DELETE CASCADE
+    )";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Agencies table created successfully\n";
+    } else {
+        echo "Error creating agencies table: " . $conn->error;
+    }
+
+
+    mysqli_select_db($conn, $databaseName);
+
     $conn->close();
-    ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>bank </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-  </head>
-  <body>
-    <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
-      <label class="logo"> <img src="img/bank.png" alt=""></label>
-      <ul>
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-    </nav>
-    <section>
-<div class="content">
-<h1>bienvenue! dans notre<br> système bancaire central</h1>
-<div class="btn">
- <a href="adminlogin.php"><button>admin login</button></a>
-<button>client login</button>
-</div>
-</div>
-<img src="img/banking-illustration.png" alt="bank">
-    </section>
-  </body>
-</html> -->
+?>
