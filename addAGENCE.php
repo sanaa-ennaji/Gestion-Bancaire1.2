@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $adresse = isset($_POST["adresse"]) ? $_POST["adresse"] : "";
     $bank_id = isset($_POST["bank_id"]) ? $_POST["bank_id"] : "";
 
-    // Insert agency
     $sql = "INSERT INTO agencies (longitude, latitude, adresse, bank_id) VALUES ('$longitude', '$latitude', '$adresse', '$bank_id')";
 
     if (mysqli_query($conn, $sql)) {
@@ -43,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="bank.php"><i data-feather="corner-down-left"></i> Back to Banks</a>
+        <a class="nav-link" href="agence.php"><i data-feather="corner-down-left"></i> Back to Banks</a>
       </li>
     </ul>
   </div>
@@ -52,7 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="d-flex p-5 justify-content-between">
    <h1> add agence</h1>
 </div>
-
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <div class="form-group">
             <label for="longitude">Longitude:</label>

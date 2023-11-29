@@ -70,9 +70,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <button type="submit" class="btn btn-primary">Add Bank</button>
     </form>
 </div>
-<script>
-      feather.replace();
-    </script>
-</body>
-</html>
+
 

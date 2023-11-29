@@ -43,7 +43,6 @@
             <a href="#!">Forgot password?</a>
           </div>
 
-          <!-- Submit button -->
           <button type="submit" class="btn btn-primary btn-lg btn-block">log in</button>
 
         </form>

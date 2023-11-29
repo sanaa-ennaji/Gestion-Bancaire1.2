@@ -24,8 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_bank"])) {
 }
 
 ob_end_flush(); 
-
-
 mysqli_close($conn);
 ?>
 

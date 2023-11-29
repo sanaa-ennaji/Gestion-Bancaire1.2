@@ -51,7 +51,7 @@ ob_end_flush();
   <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
     <ul class="navbar-nav d-flex justify-content-between ml-3">
       <li class="nav-item active">
-        <a class="nav-link custom-link"class="navbar-brand" href="#">Dashboard</a>
+        <a class="nav-link custom-link"class="navbar-brand" href="dashboard.php">Dashboard</a>
       </li>
       <li class="nav-item" >
         <a class="nav-link custom-link" href="#">Clients</a>
@@ -82,7 +82,6 @@ ob_end_flush();
         <tbody>
             <?php
             $result = mysqli_query($conn, "SELECT * FROM agencies");
-
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>
                         <td>{$row['id']}</td>
@@ -97,9 +96,8 @@ ob_end_flush();
                             </form>
                         </td>
                       </tr>";
-
-            }
-            ?>
+                     }
+                   ?>
         </tbody>
     </table>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
