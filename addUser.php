@@ -28,17 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_user"])) {
     }
 }
 
-// Delete user
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_user"])) {
-    $user_id = $_POST["user_id"];
-    $sql = "DELETE FROM users WHERE id = $user_id";
 
-    if (mysqli_query($conn, $sql)) {
-        echo "User deleted successfully";
-    } else {
-        echo "Error deleting user: " . mysqli_error($conn);
-    }
-}
 mysqli_close($conn);
 ?>
 <!DOCTYPE html>

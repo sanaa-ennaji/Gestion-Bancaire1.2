@@ -19,10 +19,10 @@
         echo "Error creating database: " . $conn->error;
     }
 
-    // Select the database
+    
     mysqli_select_db($conn, $databaseName);
 
-    // Create the banks table
+    
     $sql = "CREATE TABLE IF NOT EXISTS banks (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(255) NOT NULL,

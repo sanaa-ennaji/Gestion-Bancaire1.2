@@ -15,6 +15,18 @@ $result = mysqli_query($conn, "SELECT users.*, addresses.ville, agencies.latitud
                                 LEFT JOIN agencies ON users.agency_id = agencies.id
                                 LEFT JOIN roles ON users.role_id = roles.id");
 
+ // Delete user
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_user"])) {
+    $user_id = $_POST["user_id"];
+    $sql = "DELETE FROM users WHERE id = $user_id";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "User deleted successfully";
+    } else {
+        echo "Error deleting user: " . mysqli_error($conn);
+    }
+}
+
 mysqli_close($conn);
 ?>
 <!DOCTYPE html>
