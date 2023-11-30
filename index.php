@@ -88,7 +88,22 @@
     } else {
         echo "Error creating table: " . $conn->error;
     }
-    
-
+   $sql =" CREATE TABLE IF NOT EXISTS users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(255) NOT NULL,
+        password VARCHAR(255) NOT NULL,
+        confirmPassword VARCHAR(255) NOT NULL,
+        address_id INT,
+        agency_id INT,
+        role_id INT,
+        FOREIGN KEY (address_id) REFERENCES addresses(id),
+        FOREIGN KEY (agency_id) REFERENCES agencies(id),
+        FOREIGN KEY (role_id) REFERENCES roles(id)
+    )";
+     if ($conn->query($sql) === TRUE) {
+        echo "Table 'user' created successfully";
+    } else {
+        echo "Error creating table: " . $conn->error;
+    }
     $conn->close();
 ?>
