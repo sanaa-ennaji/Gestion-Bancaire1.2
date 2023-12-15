@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+section{
+    background-color: rgb(48, 80, 104);
+    height: 100vh ;
+    
+  }
+
+ 
