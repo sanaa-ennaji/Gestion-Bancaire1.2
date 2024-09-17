@@ -1,4 +1,4 @@
-# Brif6 Extension du Système de Gestion Bancaire
+# Brif6 : Extension du Système de Gestion Bancaire
 
 
 **1. Contexte **
